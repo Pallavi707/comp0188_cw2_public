@@ -191,10 +191,7 @@ class TorchTrainingLoop:
         self,
         model:BaseModel,
         gpu:bool,
-        #optimizer:torch.optim.Optimizer,
-        optimizer = torch.optim.Adam(
-          model.parameters(), lr=exp_kwargs["learning_rate"],
-          eps=1e-04)
+        optimizer:torch.optim.Optimizer,
         criterion:CriterionProtocol,
         epochs:int,
         logger:logging.Logger,
